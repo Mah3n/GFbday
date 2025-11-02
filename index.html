@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Prettiest Birthday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/be3a1622b0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="isi-surat" class="h-screen w-full fixed top-0 left-0 bg-[rgba(0,0,0,0.7)] z-[999] hidden">
+        <img id="image-surat" src="/img/letter.png" alt="" class="absolute z-[9999] top-1/2 -translate-y-1/2 hidden">
+        <i id="close-button" class="text-white text-2xl fa-solid fa-xmark absolute right-7 top-[7rem] hidden"></i>
+    </section>
+    <div id="intro" class="alllove h-[100vh] w-full">
+        <i class="love love1 fas fa-heart"></i>
+        <i class="love love2 fas fa-heart"></i>
+        <i class="love love3 fas fa-heart"></i>
+        <i class="love love4 fas fa-heart"></i>
+        <i class="love love5 fas fa-heart"></i>
+        <h1 class="poppins-medium text-2xl">Baby waitt...</h1>
+    </div>
+
+
+    <section id="banner" class="relative h-screen w-full overflow-hidden hidden">
+        <div class="absolute top-0 left-0 z-[-2] h-full w-full rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
+
+        <p class="poppins-medium banner-text max-w-[200px] absolute top-[5rem] left-5">
+            ~ So many beautiful flowers in this world, but this is my favourite.
+        </p>
+
+        <p class="poppins-medium banner-text max-w-[200px] absolute bottom-[4rem] right-5">
+            ~ Happy Birthday, Love.
+        </p>
+          
+        <nav class="flex justify-between px-4 pt-2">
+            <p>19.Mar.2025</p>
+            <p>19th</p>
+            <p>Happy Birthday</p>
+        </nav>
+
+        <div class="image h-screen w-full relative">
+        <img src="./img/fav flower.svg" alt="favorite flower" id="main-picture" class="w-[90%] sm:w-[45%] absolute left-1/2 bottom-[11rem] -translate-x-1/2 z-10">
+        <img src="img/flower1.svg" alt="favorite flower" id="main-picture" class="w-[50%] sm:w-[45%] absolute right-8 bottom-[12rem] rotate-[0.7rad] z-5">
+        <img src="img/flower2.svg" alt="favorite flower" id="main-picture" class="w-[50%] sm:w-[45%] absolute left-4 bottom-[12rem] -rotate-[0.7rad] z-5">
+        </div>
+    </section>
+
+    <section id="notes" class="relative h-[60dvh] w-full flex items-center justify-center hidden">
+        <div class="absolute top-0 left-0 z-[-2] h-full w-full rotate-180 transform bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)]"></div>
+        <img src="./img/Surat.svg" alt="" class="w-[80%]">
+        <button id="surat" class="absolute top-[14rem] right-[7.5rem]">Open the letter</button>
+    </section>
+
+    <script>
+        window.addEventListener("load", function() {
+            const intro = document.getElementById("intro");
+            const banner = document.getElementById("banner");
+            const notes = document.getElementById("notes");
+            setTimeout(() => {
+                intro.style.display = "none";
+                banner.classList.remove("hidden");
+                notes.classList.remove("hidden");
+            }, 3000);
+        });
+
+        const buttonSurat = document.getElementById("surat");
+        const bgSurat = document.getElementById("isi-surat");
+        const imageSurat = document.getElementById("image-surat");
+        const closeButton = document.getElementById("close-button");
+
+        buttonSurat.addEventListener('click', () => {
+            bgSurat.classList.remove("hidden");
+            imageSurat.classList.remove("hidden");
+            closeButton.classList.remove("hidden");
+        });
+
+        closeButton.addEventListener('click', () => {
+            bgSurat.classList.add("hidden");
+            imageSurat.classList.add("hidden");
+            closeButton.classList.add("hidden");
+        });
+    </script>
+</body>
+</html>
